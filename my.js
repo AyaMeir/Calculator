@@ -10,7 +10,6 @@ $(document).ready(function() {
 //   return document.querySelectorAll(elements); 
 // };
     
-
   var screen = $('.screen');
   var evaluate = $('#eval');
   var num = $ ('.num');
@@ -56,54 +55,44 @@ $(document).ready(function() {
 
   $("#eval").click(function(){
     // temporary code to test addition operator
+    // scndprt = screen.text();
+    // var answer = +frstprt + +scndprt;
+    // screen.text(answer);
+
     scndprt = screen.text();
-    var answer = +frstprt + +scndprt;
-    screen.text(answer);
+    // scndprt = +scndprt;
+    // frstprt = +frstprt;
 
     // switch to check operatorType
     console.log(operatorType);
     switch (operatorType) {
       case "addition":
-        scndprt = screen.text();
-        var answer = +frstprt + +scndprt;
-        screen.text(answer);
-
-        // code gets run here when addition is clciked
-        console.log('addition');
-        answer = +frstprt + +scndprt;
-        screen.text(answer);
-        // answer = +frstprt + +scndprt;
+        screen.text(math.add(frstprt, scndprt));
         break;
       case "subtraction":
-        // answer = -frstprt - -scndprt;
-        console.log('subtraction');
-        var answer = +frstprt - +scndprt;
-        screen.text(answer);
+        screen.text(math.subtract(frstprt, scndprt));
         break;
       case "division":
-        console.log('divition');
-        answer = +firstpart / +scndprt;
-        screen.text(answer);
+        screen.text(math.divide(frstprt, scndprt));
         break;
       case "multiplication":
-        console.log('mulltiplication')
-        answer = +frstprt * +scndprt;
-        screen.text(answer);
+        screen.text(math.multiply(frstprt, scndprt));
         break;
-      case "percentage":
-        console.log('percentage');
-        answer = +frstprt / 100;
-        screen.text(answer);
-      case "squareroot":
-        console.log('squareroot');
-        answer =
-        default:
-
-
+      // case "percentage":
+      // case "squareroot":
+        
+      default:
         console.log('default');
-      // screen.text(answer);
     }
   });
+  $(".sqrot").click(function(){
+    screen.text(math.sqrt(frstprt));
+    });
+  $(".prcent").click(function(){
+    screen.text(math.divide(frstprt, 100));
+
+  });
+
      $("#clear").click(function(){
       frstprt = "";
       screen.text("");
@@ -111,49 +100,9 @@ $(document).ready(function() {
       scndprt = "";
   });
 
-  // switch (operator) {
-  //   case "addition":
-  //     answer = +frstprt + +scndprt;
-  //   break;
-
-  //   case "subtraction"
-  //     answer = -frstprt - -scndprt;
-  //   break;
-  //     screen.text(answer);
-  // }
-
-  // and clears screen  // and clears screen
-  // click function for + that sets the value of screen to firstpart
-  // and clears screen
-  // then user click more numbers and hits enter, enter function
-  // sets the value of screen to second part and adds frst + scnd 
-  // clears screen then adds the sum to screen
-
-// do the calculation:
-  // $(".operator").click(function(){
-  //   var value = $(this).attr("data-opr");
-  //   screen.
-  // });
 
 });
 
-//   var showNum = function (){
-//     if (result)
-//       scndprt = this.getAttribute("data-num");
-//       result = "";
-//     } else {
-//       scndprt += this.getAttribute("data-num");
-//     }   
-//     screem.innerHTML = scndprt;
-//   };
-
-//   var movNum = function(){
-//     frstprt = scndprt;
-//     scndprt ="";
-//     operator = this.getAttribute("data-opr");
-
-//     eval.setAttribute("data-result", "");
-//   };
 
   
 //   var display = function(){
@@ -199,35 +148,4 @@ $(document).ready(function() {
 //     }
 //   }
 
-//  screen.innerHTML = result;
-//   equa.setAttribute("data-result", result);
-//   frstprt = 0;
-//   scndprt = result;
- 
-//  };
-
-//   var clr = function(){
-//     frstprt = "";
-//     scndprt = "";
-//     screen.innerHTML = "0";
-//     equa.setAttribute("data-result", result);
-//   };
-
-//   for (var b = 0, l = num.length; b < l b++){
-//     num[b].onclick = showNum;
-//   }
-//   for (var b = 0, l = operator.length; b < l b++){
-//     operator[b].onclick = movNum;
-//   }
-
-//   equa.onclick = display;
-
-//   el("#clear").onclick = clr;
-
-//   el("#clear").onclick = function(){
-//     window.location = window.location;
-//   };
-
-// }());
-
-
+//  
