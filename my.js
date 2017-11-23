@@ -1,15 +1,6 @@
 $(document).ready(function() {
-
-
-  
-
-// var el = function (elements){
-//   if (elements.Chart(0)===()){
-//      return document.querySelector(elements); 
-//   }
-//   return document.querySelectorAll(elements); 
-// };
     
+  // set variables
   var screen = $('.screen');
   var evaluate = $('#eval');
   var num = $ ('.num');
@@ -19,10 +10,10 @@ $(document).ready(function() {
   var result = "";
   var operatorClicked = false;
   var operatorType = "";
-  // show number values:
+  
+  // show number values
   $(".num").click(function() {
     if (operatorClicked == true) {
-      // console.log("clear screen");
       screen.empty();
       operatorClicked = false;
     }
@@ -32,39 +23,21 @@ $(document).ready(function() {
     } else {
       alert("You've exceeded the max char limit!");
     }
-    // console.log(screen.text().length);
-    
-    // screen.append(value) = frstprt;
-    // screen.append(value) = scndprt;
   });  
   
+  // operator click
   $(".operator").click(function(){
     frstprt = screen.text();
     operatorClicked = true;
-    // console.log(frstprt);
-
     operatorType = $(this).attr("data-opr");
-    // console.log($(this).attr("data-opr"));
-    // scndprt = screen.text();
-    // }
-
-    //   if else (scndprt.clicked == true){
-
-    // }
   });
 
+  // equal click function
   $("#eval").click(function(){
-    // temporary code to test addition operator
-    // scndprt = screen.text();
-    // var answer = +frstprt + +scndprt;
-    // screen.text(answer);
-
+    // get second value
     scndprt = screen.text();
-    // scndprt = +scndprt;
-    // frstprt = +frstprt;
-
-    // switch to check operatorType
-    console.log(operatorType);
+    
+    // do the calculation
     switch (operatorType) {
       case "addition":
         screen.text(math.add(frstprt, scndprt));
@@ -77,67 +50,31 @@ $(document).ready(function() {
         break;
       case "multiplication":
         screen.text(math.multiply(frstprt, scndprt));
-        break;
-      // case "percentage":
-      // case "squareroot":
-        
+        break;      
       default:
-        console.log('default');
+        alert('Not a valid operator.');
     }
   });
-  $(".sqrot").click(function(){
+
+  // sqrt click function 
+  $(".sqrt").click(function(){
     screen.text(math.sqrt(frstprt));
-    });
+  });
+
+  // percent click function
   $(".prcent").click(function(){
     screen.text(math.divide(frstprt, 100));
-
   });
 
-     $("#clear").click(function(){
-      frstprt = "";
-      screen.text("");
-    // if ($(this.attr()===))     
-      scndprt = "";
+  // clear screen
+  $("#clear").click(function(){
+    frstprt = "";
+    screen.text("");
+    scndprt = "";
   });
-
-
 });
 
-
-  
-//   var display = function(){
-//     frstprt = parseFloat(frstprt);
-//     scndprt = parseFloat(scndprt);
-//   }
-//   var displayNum = function() {
-
-//   switch (operator){
-//     case "times":
-//     result = frstprt * scndprt;
-//     break;
-
-//     case "devided by":
-//     result = frstprt / scndprt;
-//     break;
-
-//     case "plus":
-//     result = frstprt + scndprt;
-//     break;
-
-//     case "minus":
-//     result = frstprt - scndprt;
-//     break;
-
-//     case "percent":
-//     // 20 % 100 (20% of 100)
-//     // 20/100
-
-//     case "square root"
-//     // 
-
-//     default:
-//     result = scndprt;
-//   }
+// example code
 //    if (!isFinite(result)){
 //    if (isNaN(result)) {
 //     result = "error!";
@@ -147,5 +84,3 @@ $(document).ready(function() {
 //       el('#clear').classList.add("show");
 //     }
 //   }
-
-//  
