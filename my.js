@@ -66,6 +66,16 @@ $(document).ready(function() {
     screen.text(math.divide(frstprt, 100));
   });
 
+  // var numberWithCommas = function (num) {
+  //   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  // };
+
+  // $("body").on('DOMSubtreeModified', ".screen", function() {
+  //   formattedText = numberWithCommas(screen.text());
+  //   console.log(formattedText);
+  //   // return screen.text(formattedText);
+  // });
+  // $()
   // clear screen
   $("#clear").click(function(){
     frstprt = "";
